@@ -63,6 +63,7 @@ DataSophon 是一个用于快速部署、管理、监控和自动化运维大数
 - [00-Service模块总览](./docs/service/00-Service模块总览.md) - Service 层架构全面概述
 - [01-集群服务](./docs/service/01-集群服务.md) - ClusterInfoService 集群生命周期管理详解
 - [02-服务实例服务](./docs/service/02-服务实例服务.md) - ServiceInstanceService 状态监控与配置管理
+- [03-告警组服务详解](./docs/service/03-告警组服务详解.md) - **NEW** AlertGroupService、ClusterAlertQuotaService 完整分析
 
 ### 🛠️ Common 模块 (docs/common/) **完整分析 + 实用指南**
 
@@ -92,6 +93,11 @@ DataSophon 是一个用于快速部署、管理、监控和自动化运维大数
 ### 📊 Domain 模块 (docs/domain/)
 
 - [00-Domain与Infrastructure模块总览](./docs/domain/00-Domain与Infrastructure模块总览.md) - 实体类与数据访问层概述
+- [01-告警实体类详解](./docs/domain/01-告警实体类详解.md) - **NEW** 告警组、告警指标、告警规则、告警历史实体完整分析
+
+### 💾 Infrastructure 模块 (docs/infrastructure/) **NEW**
+
+- [01-告警数据访问层详解](./docs/infrastructure/01-告警数据访问层详解.md) - **NEW** Mapper 层完整分析、MyBatis-Plus 使用
 
 ### 🖥️ UI 模块 (docs/ui/) **NEW - 完整分析**
 
@@ -119,8 +125,8 @@ DataSophon 是一个用于快速部署、管理、监控和自动化运维大数
 | 数据库表 | ~50个 |
 | REST API 接口 | ~200个 |
 | 支持的大数据组件 | 20+ (HDFS, YARN, Spark, Flink, Kafka 等) |
-| **已完成分析文档** | **51个** |
-| **文档总字数** | **约83万字** |
+| **已完成分析文档** | **54个** |
+| **文档总字数** | **约90万字** |
 
 ## 核心模块说明
 
@@ -236,5 +242,5 @@ DataSophon 是一个用于快速部署、管理、监控和自动化运维大数
 
 **文档维护**: DataSophon 源码分析团队  
 **更新日期**: 2025-11-16  
-**最新更新**: API 模块完整分析（14个文档，含监控、配置、安全、拦截器、异常处理，总计51个文档，约83万字）  
+**最新更新**: 告警组管理完整分析（新增 Service 层、Domain 层、Infrastructure 层告警文档，总计54个文档，约90万字）  
 **版权声明**: Apache License 2.0

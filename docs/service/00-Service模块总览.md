@@ -46,6 +46,9 @@ datasophon-service/
 - 全局变量管理和缓存
 - 默认资源初始化（YARN 调度器、节点标签、队列、机架）
 
+**关联文档**: 
+- [API 层 - 03-集群管理Controller.md](../api/03-集群管理Controller.md)
+
 **核心方法**:
 ```java
 Result saveCluster(ClusterInfoEntity clusterInfo)           // 创建集群
@@ -87,6 +90,9 @@ Result assignRack(Integer clusterId, String rack, String hostIds)  // 分配机�
 - 监控大盘集成
 - 告警信息统计
 - 安全的级联删除
+
+**关联文档**: 
+- [API 层 - 04-服务管理Controller.md](../api/04-服务管理Controller.md)
 
 **核心方法**:
 ```java
@@ -176,9 +182,12 @@ Result getCommandInfo(String commandId)                 // 查询命令详情
 
 #### AlertGroupService - 告警组服务
 **职责**: 告警接收组管理
+- ✅ **已完成文档**: [03-告警组服务详解.md](./03-告警组服务详解.md)
 - 告警组的增删改查
 - 告警接收人管理
-- 多通知渠道支持（钉钉、企业微信、邮件、飞书）
+- 多通知渠道支持（钉钉、企业微信、邮件、飞书、Webhook）
+- 缓存管理和性能优化
+- 事务管理和数据一致性
 
 **核心方法**:
 ```java
@@ -187,24 +196,45 @@ Result listPage(String alertGroupName, Integer page, Integer pageSize)  // 分�
 Result updateAlertGroup(AlertGroupEntity alertGroup) // 更新告警组
 ```
 
+**关联文档**: 
+- [API 层 - 06-告警管理Controller.md](../api/06-告警管理Controller.md)
+- [Domain 层 - 01-告警实体类详解.md](../domain/01-告警实体类详解.md)
+- [Infrastructure 层 - 01-告警数据访问层详解.md](../infrastructure/01-告警数据访问层详解.md)
+
 #### ClusterAlertRuleService - 告警规则服务
 **职责**: 告警规则配置
-- 告警规则定义
-- 告警阈值设置
-- 告警触发条件
+- ✅ **已完成文档**: [03-告警组服务详解.md](./03-告警组服务详解.md#四clusteralertruleservice---告警规则服务)
+- 告警规则定义（阈值、趋势、异常检测、复合告警）
+- 告警阈值设置和触发条件
+- 静默期管理和告警风暴防护
 - 规则与告警组关联
+
+**关联文档**: 
+- [Domain 层 - 01-告警实体类详解.md](../domain/01-告警实体类详解.md#四clusteralertrule---告警规则实体)
 
 #### ClusterAlertHistoryService - 告警历史服务
 **职责**: 告警记录管理
-- 告警历史查询
-- 告警趋势分析
-- 告警统计报表
+- ✅ **已完成文档**: [03-告警组服务详解.md](./03-告警组服务详解.md#五clusteralerthistoryservice---告警历史服务)
+- 告警历史记录和查询
+- 告警趋势分析和统计
+- 告警通知状态管理
+- 按级别和服务统计
+
+**关联文档**: 
+- [Domain 层 - 01-告警实体类详解.md](../domain/01-告警实体类详解.md#五clusteralerthistory---告警历史实体)
+- [Infrastructure 层 - 01-告警数据访问层详解.md](../infrastructure/01-告警数据访问层详解.md#五clusteralerthistorymapper---告警历史数据访问)
 
 #### ClusterAlertQuotaService - 告警指标服务
 **职责**: 监控指标管理
-- 指标定义和采集
-- 指标与规则关联
-- 指标数据查询
+- ✅ **已完成文档**: [03-告警组服务详解.md](./03-告警组服务详解.md#三clusteralertquotaservice---告警指标服务)
+- 指标定义和 Prometheus 表达式管理
+- 指标与告警组关联
+- 批量更新和 Prometheus 同步
+- 指标启用/禁用管理
+
+**关联文档**: 
+- [Domain 层 - 01-告警实体类详解.md](../domain/01-告警实体类详解.md#三clusteralertquota---告警指标实体)
+- [Infrastructure 层 - 01-告警数据访问层详解.md](../infrastructure/01-告警数据访问层详解.md#三clusteralertquotamapper---告警指标数据访问)
 
 ### 2.6 配置管理服务
 
