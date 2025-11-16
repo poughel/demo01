@@ -36,8 +36,10 @@ DataSophon 是一个用于快速部署、管理、监控和自动化运维大数
 - [06-文档总结与指南](./docs/overview/06-文档总结与指南.md) - 文档使用指南和技术亮点总结
 - [07-后续文档开发指南](./docs/overview/07-后续文档开发指南.md) - 完整的文档开发方法论和规划
 
-### 🔧 API 模块 (docs/api/)
+### 🔧 API 模块 (docs/api/) **完整分析**
 
+#### 核心文档
+- [00-API模块文件索引](./docs/api/00-API模块文件索引.md) - **NEW** 完整文档导航和快速定位
 - [01-DataSophonApplicationServer分析](./docs/api/01-DataSophonApplicationServer分析.md) - 主启动类源码详解
 - [02-Controller层分析](./docs/api/02-Controller层分析.md) - Controller 层设计模式和 RESTful API
 - [03-集群管理Controller](./docs/api/03-集群管理Controller.md) - ClusterInfoController 完整API分析
@@ -45,6 +47,16 @@ DataSophon 是一个用于快速部署、管理、监控和自动化运维大数
 - [05-主机管理Controller](./docs/api/05-主机管理Controller.md) - ClusterHostController 机架感知管理
 - [06-告警管理Controller](./docs/api/06-告警管理Controller.md) - AlertGroupController 多通知渠道
 - [07-用户权限Controller](./docs/api/07-用户权限Controller.md) - LoginController 安全认证体系
+
+#### 高级特性
+- [08-监控大盘Controller](./docs/api/08-监控大盘Controller.md) - **NEW** 监控数据聚合、Prometheus集成、实时指标
+- [09-配置管理](./docs/api/09-配置管理.md) - **NEW** 应用配置、多环境、MyBatis、Akka
+- [10-安全认证](./docs/api/10-安全认证.md) - **NEW** JWT Token、RBAC权限、会话管理、安全防护
+- [11-拦截器](./docs/api/11-拦截器.md) - **NEW** 认证拦截、权限验证、日志记录、限流控制
+- [12-异常处理](./docs/api/12-异常处理.md) - **NEW** 全局异常处理、自定义异常、参数验证
+
+#### 实用工具
+- [99-API模块速查手册](./docs/api/99-API模块速查手册.md) - **NEW** 常用API、配置、代码片段速查
 
 ### 🎯 Service 模块 (docs/service/) **NEW**
 
@@ -107,8 +119,8 @@ DataSophon 是一个用于快速部署、管理、监控和自动化运维大数
 | 数据库表 | ~50个 |
 | REST API 接口 | ~200个 |
 | 支持的大数据组件 | 20+ (HDFS, YARN, Spark, Flink, Kafka 等) |
-| **已完成分析文档** | **45个** |
-| **文档总字数** | **约65万字** |
+| **已完成分析文档** | **51个** |
+| **文档总字数** | **约83万字** |
 
 ## 核心模块说明
 
@@ -210,5 +222,5 @@ DataSophon 是一个用于快速部署、管理、监控和自动化运维大数
 
 **文档维护**: DataSophon 源码分析团队  
 **更新日期**: 2025-11-16  
-**最新更新**: UI 模块完整分析（350+ 文件全覆盖，8个新文档，总计45个文档，约65万字）  
+**最新更新**: API 模块完整分析（14个文档，含监控、配置、安全、拦截器、异常处理，总计51个文档，约83万字）  
 **版权声明**: Apache License 2.0
